@@ -1,0 +1,72 @@
+<label>Employees</label>
+<table class="table table-bordered table-dark">
+<thead>
+    <tr>
+        <th>Employee ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Salart</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Action</th>
+
+    </tr>
+
+</thead>
+
+<tbody>
+    
+    <tr id="firstTr" *ngIf="showEdit;else showUpdate">
+        <th scope="row">{{ objEmployee[0].employeeID }}</th>
+        <td>{{ objEmployee[0].Firstname }}</td>
+        <td>{{ objEmployee[0].Lastname }}</td>
+        <td>{{ objEmployee[0].salary }}</td>
+        <td>{{ objEmployee[0].DOB }}</td>
+        <td>{{ objEmployee[0].email }}</td>
+        <td>
+          <button
+            type="button"
+            id="first"
+            class="btn btn-primary"
+            style="margin-left: 10px"
+            (click)="Editemp()"
+          >
+            Edit
+          </button>
+        </td>
+      </tr>
+    <ng-template #showUpdate>
+      <tr>
+        <th scope="row">
+          <input type="number" [(ngModel)]="objEmployee[0].employeeID" />
+        </th>
+        <td><input type="text" [(ngModel)]="objEmployee[0].Firstname" /></td>
+        <td><input type="text" [(ngModel)]="objEmployee[0].Lastname" /></td>
+        <td><input type="number" [(ngModel)]="objEmployee[0].salary" /></td>
+        <td><input type="text" [(ngModel)]="objEmployee[0].DOB" /></td>
+        <td><input type="text" [(ngModel)]="objEmployee[0].email" /></td>
+        <td>
+          <button
+            type="button"
+            id="first"
+            class="btn btn-primary"
+            style="margin-left: 10px"
+            (click)="Updateemp()"
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+
+</tbody>
+
+</table> 
+
+
+
+
+
+
+
+
