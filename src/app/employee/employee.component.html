@@ -5,7 +5,7 @@
         <th>Employee ID</th>
         <th>FirstName</th>
         <th>LastName</th>
-        <th>Salart</th>
+        <th>Salary</th>
         <th>DOB</th>
         <th>Email</th>
         <th>Action</th>
@@ -20,8 +20,8 @@
         <th scope="row">{{ objEmployee[0].employeeID }}</th>
         <td>{{ objEmployee[0].Firstname }}</td>
         <td>{{ objEmployee[0].Lastname }}</td>
-        <td>{{ objEmployee[0].salary }}</td>
-        <td>{{ objEmployee[0].DOB }}</td>
+        <td>{{ objEmployee[0].salary | currency:'USD'}}</td>
+        <td>{{ objEmployee[0].DOB | date:"dd/MM/yyyy" | uppercase }}</td>
         <td>{{ objEmployee[0].email }}</td>
         <td>
           <button
